@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://b2ipavmx0acs5"
-path.s3tc="res://.godot/imported/crown_t.png-b0f111fa5f54d25e533c0ba369b2ee71.s3tc.stex"
-path.etc2="res://.godot/imported/crown_t.png-b0f111fa5f54d25e533c0ba369b2ee71.etc2.stex"
+path.s3tc="res://.godot/imported/crown_t.png-97e48b586b5a5fea248645db7e18711b.s3tc.stex"
+path.etc2="res://.godot/imported/crown_t.png-97e48b586b5a5fea248645db7e18711b.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/crown_t.png"
-dest_files=["res://.godot/imported/crown_t.png-b0f111fa5f54d25e533c0ba369b2ee71.s3tc.stex", "res://.godot/imported/crown_t.png-b0f111fa5f54d25e533c0ba369b2ee71.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/crown_t.png"
+dest_files=["res://.godot/imported/crown_t.png-97e48b586b5a5fea248645db7e18711b.s3tc.stex", "res://.godot/imported/crown_t.png-97e48b586b5a5fea248645db7e18711b.etc2.stex"]
 
 [params]
 

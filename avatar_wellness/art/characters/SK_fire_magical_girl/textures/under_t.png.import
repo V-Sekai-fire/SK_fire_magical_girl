@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://wpghkip7aamm"
-path.s3tc="res://.godot/imported/under_t.png-b35acd2574c433582229734f4feeb210.s3tc.stex"
-path.etc2="res://.godot/imported/under_t.png-b35acd2574c433582229734f4feeb210.etc2.stex"
+path.s3tc="res://.godot/imported/under_t.png-1d439c9de122614e9addc2d5f2412a81.s3tc.stex"
+path.etc2="res://.godot/imported/under_t.png-1d439c9de122614e9addc2d5f2412a81.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/under_t.png"
-dest_files=["res://.godot/imported/under_t.png-b35acd2574c433582229734f4feeb210.s3tc.stex", "res://.godot/imported/under_t.png-b35acd2574c433582229734f4feeb210.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/under_t.png"
+dest_files=["res://.godot/imported/under_t.png-1d439c9de122614e9addc2d5f2412a81.s3tc.stex", "res://.godot/imported/under_t.png-1d439c9de122614e9addc2d5f2412a81.etc2.stex"]
 
 [params]
 

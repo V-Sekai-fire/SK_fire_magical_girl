@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://c03h1l8xq7ops"
-path.s3tc="res://.godot/imported/m_furiru_baseColor.png-3490dd3479fbf3f8bc4efa5f06dbdc61.s3tc.stex"
-path.etc2="res://.godot/imported/m_furiru_baseColor.png-3490dd3479fbf3f8bc4efa5f06dbdc61.etc2.stex"
+path.s3tc="res://.godot/imported/m_furiru_baseColor.png-8d05a83a0760f8619000b814e27665a2.s3tc.stex"
+path.etc2="res://.godot/imported/m_furiru_baseColor.png-8d05a83a0760f8619000b814e27665a2.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/m_furiru_baseColor.png"
-dest_files=["res://.godot/imported/m_furiru_baseColor.png-3490dd3479fbf3f8bc4efa5f06dbdc61.s3tc.stex", "res://.godot/imported/m_furiru_baseColor.png-3490dd3479fbf3f8bc4efa5f06dbdc61.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/m_furiru_baseColor.png"
+dest_files=["res://.godot/imported/m_furiru_baseColor.png-8d05a83a0760f8619000b814e27665a2.s3tc.stex", "res://.godot/imported/m_furiru_baseColor.png-8d05a83a0760f8619000b814e27665a2.etc2.stex"]
 
 [params]
 

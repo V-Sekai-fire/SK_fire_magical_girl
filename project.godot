@@ -142,7 +142,7 @@ config/process_priority=0
 
 import/blender/enabled=true
 import/fbx/use_fbx=false
-import/blend/blender_path="blender"
+import/blend/blender_path=""
 
 [importer_defaults]
 

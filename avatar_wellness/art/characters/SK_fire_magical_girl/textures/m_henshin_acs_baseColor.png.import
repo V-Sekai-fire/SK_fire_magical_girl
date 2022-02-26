@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://dhehjl1iue4v8"
-path.s3tc="res://.godot/imported/m_henshin_acs_baseColor.png-ab42d2b29fb038dd545003d65e641d6d.s3tc.stex"
-path.etc2="res://.godot/imported/m_henshin_acs_baseColor.png-ab42d2b29fb038dd545003d65e641d6d.etc2.stex"
+path.s3tc="res://.godot/imported/m_henshin_acs_baseColor.png-d197332276920d3bd935f82312dccd5d.s3tc.stex"
+path.etc2="res://.godot/imported/m_henshin_acs_baseColor.png-d197332276920d3bd935f82312dccd5d.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/m_henshin_acs_baseColor.png"
-dest_files=["res://.godot/imported/m_henshin_acs_baseColor.png-ab42d2b29fb038dd545003d65e641d6d.s3tc.stex", "res://.godot/imported/m_henshin_acs_baseColor.png-ab42d2b29fb038dd545003d65e641d6d.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/m_henshin_acs_baseColor.png"
+dest_files=["res://.godot/imported/m_henshin_acs_baseColor.png-d197332276920d3bd935f82312dccd5d.s3tc.stex", "res://.godot/imported/m_henshin_acs_baseColor.png-d197332276920d3bd935f82312dccd5d.etc2.stex"]
 
 [params]
 

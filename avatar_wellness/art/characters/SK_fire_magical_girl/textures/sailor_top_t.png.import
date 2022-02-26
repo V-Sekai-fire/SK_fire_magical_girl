@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://hmfry6labc4w"
-path.s3tc="res://.godot/imported/sailor_top_t.png-713993190fff56df4ff501a60789268a.s3tc.stex"
-path.etc2="res://.godot/imported/sailor_top_t.png-713993190fff56df4ff501a60789268a.etc2.stex"
+path.s3tc="res://.godot/imported/sailor_top_t.png-5e57e72e437eb1c3d061efaab4b5667e.s3tc.stex"
+path.etc2="res://.godot/imported/sailor_top_t.png-5e57e72e437eb1c3d061efaab4b5667e.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/sailor_top_t.png"
-dest_files=["res://.godot/imported/sailor_top_t.png-713993190fff56df4ff501a60789268a.s3tc.stex", "res://.godot/imported/sailor_top_t.png-713993190fff56df4ff501a60789268a.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/sailor_top_t.png"
+dest_files=["res://.godot/imported/sailor_top_t.png-5e57e72e437eb1c3d061efaab4b5667e.s3tc.stex", "res://.godot/imported/sailor_top_t.png-5e57e72e437eb1c3d061efaab4b5667e.etc2.stex"]
 
 [params]
 

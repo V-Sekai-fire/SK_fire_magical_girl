@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://c4mo2lcyqtnvu"
-path.s3tc="res://.godot/imported/hairb_01_t.png-16687ef05ea90780162e273e7b8ea4e6.s3tc.stex"
-path.etc2="res://.godot/imported/hairb_01_t.png-16687ef05ea90780162e273e7b8ea4e6.etc2.stex"
+path.s3tc="res://.godot/imported/hairb_01_t.png-7df486db6009f8684f57bbd14dc408c5.s3tc.stex"
+path.etc2="res://.godot/imported/hairb_01_t.png-7df486db6009f8684f57bbd14dc408c5.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/hairb_01_t.png"
-dest_files=["res://.godot/imported/hairb_01_t.png-16687ef05ea90780162e273e7b8ea4e6.s3tc.stex", "res://.godot/imported/hairb_01_t.png-16687ef05ea90780162e273e7b8ea4e6.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/hairb_01_t.png"
+dest_files=["res://.godot/imported/hairb_01_t.png-7df486db6009f8684f57bbd14dc408c5.s3tc.stex", "res://.godot/imported/hairb_01_t.png-7df486db6009f8684f57bbd14dc408c5.etc2.stex"]
 
 [params]
 

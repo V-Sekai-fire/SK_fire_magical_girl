@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://djway00yi2yta"
-path.s3tc="res://.godot/imported/t_eye.png-f847e92e50151b55025c8b5f30b9b782.s3tc.stex"
-path.etc2="res://.godot/imported/t_eye.png-f847e92e50151b55025c8b5f30b9b782.etc2.stex"
+path.s3tc="res://.godot/imported/t_eye.png-daceb05d3673ef0e27202cac79a6a76a.s3tc.stex"
+path.etc2="res://.godot/imported/t_eye.png-daceb05d3673ef0e27202cac79a6a76a.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/t_eye.png"
-dest_files=["res://.godot/imported/t_eye.png-f847e92e50151b55025c8b5f30b9b782.s3tc.stex", "res://.godot/imported/t_eye.png-f847e92e50151b55025c8b5f30b9b782.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/t_eye.png"
+dest_files=["res://.godot/imported/t_eye.png-daceb05d3673ef0e27202cac79a6a76a.s3tc.stex", "res://.godot/imported/t_eye.png-daceb05d3673ef0e27202cac79a6a76a.etc2.stex"]
 
 [params]
 

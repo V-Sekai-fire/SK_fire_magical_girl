@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://242r6k5y7y7y"
-path.s3tc="res://.godot/imported/furiru01_ribon_t.png-e665660223f49da474bc5b7bef41d0b5.s3tc.stex"
-path.etc2="res://.godot/imported/furiru01_ribon_t.png-e665660223f49da474bc5b7bef41d0b5.etc2.stex"
+path.s3tc="res://.godot/imported/furiru01_ribon_t.png-37866e9c5503354ff3426d0e823c6803.s3tc.stex"
+path.etc2="res://.godot/imported/furiru01_ribon_t.png-37866e9c5503354ff3426d0e823c6803.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/furiru01_ribon_t.png"
-dest_files=["res://.godot/imported/furiru01_ribon_t.png-e665660223f49da474bc5b7bef41d0b5.s3tc.stex", "res://.godot/imported/furiru01_ribon_t.png-e665660223f49da474bc5b7bef41d0b5.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/furiru01_ribon_t.png"
+dest_files=["res://.godot/imported/furiru01_ribon_t.png-37866e9c5503354ff3426d0e823c6803.s3tc.stex", "res://.godot/imported/furiru01_ribon_t.png-37866e9c5503354ff3426d0e823c6803.etc2.stex"]
 
 [params]
 

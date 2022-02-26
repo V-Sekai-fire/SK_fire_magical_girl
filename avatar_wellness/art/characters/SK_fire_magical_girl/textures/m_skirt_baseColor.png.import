@@ -3,8 +3,8 @@
 importer="texture"
 type="StreamTexture2D"
 uid="uid://cc0p2miiw5rlu"
-path.s3tc="res://.godot/imported/m_skirt_baseColor.png-edd30d88e5f122fab40fb0bfab70b033.s3tc.stex"
-path.etc2="res://.godot/imported/m_skirt_baseColor.png-edd30d88e5f122fab40fb0bfab70b033.etc2.stex"
+path.s3tc="res://.godot/imported/m_skirt_baseColor.png-ec24e81cd389e66b8cee1ece03c7a7c1.s3tc.stex"
+path.etc2="res://.godot/imported/m_skirt_baseColor.png-ec24e81cd389e66b8cee1ece03c7a7c1.etc2.stex"
 metadata={
 "imported_formats": ["bptc", "s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://avatar_wellness/art/characters/SK_魔法少女☆彡/textures/m_skirt_baseColor.png"
-dest_files=["res://.godot/imported/m_skirt_baseColor.png-edd30d88e5f122fab40fb0bfab70b033.s3tc.stex", "res://.godot/imported/m_skirt_baseColor.png-edd30d88e5f122fab40fb0bfab70b033.etc2.stex"]
+source_file="res://avatar_wellness/art/characters/SK_fire_magical_girl/textures/m_skirt_baseColor.png"
+dest_files=["res://.godot/imported/m_skirt_baseColor.png-ec24e81cd389e66b8cee1ece03c7a7c1.s3tc.stex", "res://.godot/imported/m_skirt_baseColor.png-ec24e81cd389e66b8cee1ece03c7a7c1.etc2.stex"]
 
 [params]
 
