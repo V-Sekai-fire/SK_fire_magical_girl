@@ -2,6 +2,8 @@
 extends EditorSceneFormatImporter
 
 
+const gltf_document_extension_class = preload("./vrm_extension.gd")
+
 func _get_importer_name() -> String:
 	return "Godot-VRM"
 
@@ -11,7 +13,7 @@ func _get_recognized_extensions() -> Array:
 
 
 func _get_extensions() -> PackedStringArray:
-	var exts : PackedStringArray 
+	var exts : PackedStringArray
 	exts.push_back("vrm")
 	return exts
 
@@ -25,13 +27,13 @@ func _import_animation(path: String, flags: int, options: Dictionary, bake_fps: 
 
 
 func _import_scene(path: String, flags: int, options: Dictionary, bake_fps: int) -> Object:
-	var vrm_loader = load("res://addons/vrm/vrm_loader.gd").new()
-	
-	var root_node = vrm_loader.import_scene(path, flags, bake_fps)
-	
-	if typeof(root_node) == TYPE_INT:
-		return root_node # Error code
-	else:
-		var packed_scene := PackedScene.new()
-		packed_scene.pack(root_node)
-		return packed_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+	var gltf : GLTFDocument = GLTFDocument.new()
+	var extension : GLTFDocumentExtension = gltf_document_extension_class.new()
+	gltf.extensions.push_front(extension)
+	var state : GLTFState = GLTFState.new()
+	var err = gltf.append_from_file(path, state, flags, bake_fps)
+	if err != OK:
+		return null
+
+	var generated_scene = gltf.generate_scene(state, bake_fps)
+	return generated_scene

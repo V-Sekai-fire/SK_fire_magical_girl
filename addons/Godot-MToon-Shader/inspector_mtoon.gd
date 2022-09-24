@@ -9,7 +9,7 @@ const mtoon_trans_zwrite: Shader = preload("mtoon_trans_zwrite.gdshader")
 const mtoon_trans_zwrite_cull_off: Shader = preload("mtoon_trans_zwrite_cull_off.gdshader")
 const mtoon_outline: Shader = preload("mtoon_outline.gdshader")
 
-func can_handle(object: Object) -> bool:
+func _can_handle(object: Variant) -> bool:
 	if object is ShaderMaterial:
 		if object.shader.resource_path.find("/mtoon") != -1 && object.shader.resource_path.find("mtoon_outline") == -1:
 			return true
@@ -40,7 +40,7 @@ const property_headers: Dictionary = {
 }
 
 var property_text: Dictionary = {
-	"_EnableAlphaCutout": ["Rendering Type", "TransparentWithZWrite mode can cause problems with rendering."],
+	"_AlphaCutoutEnable": ["Rendering Type", "TransparentWithZWrite mode can cause problems with rendering."],
 	"_Color": ["Lit Color, Alpha", "Lit (RGB), Alpha (A)"],
 	"_ShadeColor": ["Shade Color", "Shade (RGB)"],
 	"_Cutoff": ["Alpha Cutoff", "Discard pixels below this value in Cutout mode"],
@@ -133,8 +133,8 @@ func merge_single_line_properties(label: String, outer_prop: Control, inner_prop
 	new_control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	new_hbox.add_child(new_control, true)
 	# Is it a bad idea to constrain the inspector like this?
-	new_hbox.rect_min_size = Vector2(155, 20)
-	outer_prop.rect_min_size = Vector2(190, 20)
+	new_hbox.custom_minimum_size = Vector2(155, 20)
+	outer_prop.custom_minimum_size = Vector2(190, 20)
 	outer_prop.add_child(inner_prop, true)
 	outer_prop.add_child(new_hbox, true)
 
@@ -165,7 +165,7 @@ func do_unfold_section(editor_inspector_section: Node) -> void:
 
 #func parse_category(object: Object, category: String) -> void:
 #	print("Category " + str(category))
-func parse_end() -> void:
+func _parse_end(object: Object) -> void:
 	if last_tex_property != "":
 		_process_tex_property()
 		last_tex_property = ""
@@ -173,7 +173,7 @@ func parse_end() -> void:
 		var parent_vbox: Control = first_property.get_parent()
 		do_unfold_section(parent_vbox.get_parent())
 		for prop in property_name_to_editor:
-			property_name_to_editor[prop].set_tooltip("shader_param/" + prop + "\n" + property_text.get(prop, ["",""])[1])
+			property_name_to_editor[prop].set_tooltip("shader_parameter/" + prop + "\n" + property_text.get(prop, ["",""])[1])
 		for param in property_headers:
 			var property_editor: Control = property_name_to_editor.get(param)
 			if property_editor != null:
@@ -193,7 +193,7 @@ func parse_end() -> void:
 				parent_vbox.move_child(hbox_container, pos)
 				label_container.size_flags_horizontal = Control.SIZE_FILL
 				label_container.size_flags_vertical = Control.SIZE_FILL
-				label.rect_scale = Vector2(1.15, 1.05)
+				label.scale = Vector2(1.15, 1.05)
 				label.offset_left = -10
 				label.offset_top = 1
 				var c: Color = label.get_theme_color("font_color")
@@ -214,32 +214,32 @@ func parse_end() -> void:
 			2: [
 			],
 		}
-		property_name_to_editor["_OutlineWidthMode"].update_property()
-		property_name_to_editor["_EnableAlphaCutout"].hide_if_value = {
+		property_name_to_editor["_OutlineWidthMode"]._update_property()
+		property_name_to_editor["_AlphaCutoutEnable"].hide_if_value = {
 			0: [
 				property_name_to_editor["_Cutoff"],
 			],
 			1: [],
 		}
-		property_name_to_editor["_EnableAlphaCutout"].update_property()
+		property_name_to_editor["_AlphaCutoutEnable"]._update_property()
 		first_property = null
 		property_name_to_editor = {}.duplicate()
 
-func is_a_shader_param(path: String) -> bool:
-	return path.begins_with("shader_param/")
+func is_a_shader_parameter(path: String) -> bool:
+	return path.begins_with("shader_parameter/")
 
-func parse_property(object: Object, type: int, path: String, hint: int, hint_text: String, usage: int) -> bool:
+func _parse_property(object: Object, type: int, path: String, hint: int, hint_text: String, usage: int, wide: bool) -> bool:
 	if last_tex_property != "":
 		_process_tex_property()
 		last_tex_property = ""
-	if path == "shader_param/_EnableAlphaCutout":
+	if path == "shader_parameter/_AlphaCutoutEnable":
 		for param in property_text:
 			if len(property_text[param]) == 3:
 				continue
-			var this_type: int = typeof(object.get_shader_param(param))
+			var this_type: int = typeof(object.get_shader_parameter(param))
 			var property_editor: EditorProperty = null
 			var tooltip: String = property_text[param][1]
-			if param == "_EnableAlphaCutout":
+			if param == "_AlphaCutoutEnable":
 				first_property = RenderingTypeInspector.new(tooltip)
 				property_editor = first_property
 			elif param == "_OutlineWidthMode":
@@ -259,10 +259,10 @@ func parse_property(object: Object, type: int, path: String, hint: int, hint_tex
 			else:
 				property_editor = SpinInspector.new(tooltip, mins.get(param, 0.0), maxes.get(param, 1.0), steps.get(param, 0.001))
 			property_name_to_editor[param] = property_editor
-			var path_arr = PackedStringArray(["shader_param/" + param])
+			var path_arr = PackedStringArray(["shader_parameter/" + param])
 			add_property_editor_for_multiple_properties(property_text[param][0], path_arr, property_editor)
 		return true
-	elif is_a_shader_param(str(path)):
+	elif is_a_shader_parameter(str(path)):
 		var param: String = str(path).split("/")[-1]
 		if type == TYPE_OBJECT and str(hint_text).find("Texture") != -1:
 			last_tex_property = param
@@ -282,7 +282,7 @@ class MToonProperty extends EditorProperty:
 	func _make_custom_tooltip(text: String) -> Object:
 		var label: Label = Label.new()
 		label.text = text + self.tooltip
-		label.rect_min_size = Vector2(200,30)
+		label.custom_minimum_size = Vector2(200,30)
 		return label
 
 	func get_tooltip_text() -> String:
@@ -322,7 +322,7 @@ class MToonProperty extends EditorProperty:
 		slider.min_value = 0.0
 		slider.max_value = 1.0
 		slider.size_flags_horizontal = SIZE_EXPAND_FILL
-		slider.rect_min_size = Vector2(50.0, 20.0)
+		slider.custom_minimum_size = Vector2(50.0, 20.0)
 		slider.value_changed.connect(self._value_changed)
 
 	func emit_changed(prop : StringName, val : Variant, field : StringName = &"", changing : bool = false) -> void:
@@ -376,7 +376,7 @@ class RenderingTypeInspector extends MToonProperty:
 				set_outline_prop(get_edited_property(), 0)
 				get_edited_object().shader = mtoon_trans_zwrite_cull_off if cull_off else mtoon_trans_zwrite
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var val: Variant = get_edited_object()[get_edited_property()]
 		if typeof(val) == TYPE_NIL:
 			val = 0.0
@@ -419,7 +419,7 @@ class OutlineModeInspector extends MToonProperty:
 		emit_changed(get_edited_property(), option_idx)
 		set_outline_prop(get_edited_property(), option_idx)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var val: Variant = get_edited_object()[get_edited_property()]
 		if typeof(val) == TYPE_NIL:
 			val = 0
@@ -446,7 +446,7 @@ class OutlineColorModeInspector extends MToonProperty:
 		emit_changed(get_edited_property(), option_idx)
 		set_outline_prop(get_edited_property(), option_idx)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var val: Variant = get_edited_object()[get_edited_property()]
 		if typeof(val) == TYPE_NIL:
 			val = 0
@@ -471,7 +471,7 @@ class DebugModeInspector extends MToonProperty:
 		emit_changed(get_edited_property(), option_idx)
 		set_outline_prop(get_edited_property(), option_idx)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var val: Variant = get_edited_object()[get_edited_property()]
 		if typeof(val) == TYPE_NIL:
 			val = 0
@@ -485,7 +485,7 @@ class ReserveInspector extends MToonProperty:
 		self.tooltip = tooltip
 		add_child(hbox, true)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		pass
 
 class SpinInspector extends MToonProperty:
@@ -493,7 +493,6 @@ class SpinInspector extends MToonProperty:
 
 	func _init(tooltip: String, minval: float, maxval: float, step: float) -> void:
 		self.tooltip = tooltip
-		set_tooltip(tooltip)
 		_setup_slider(x_input, "")
 		x_input.min_value = minval
 		x_input.max_value = maxval
@@ -510,7 +509,7 @@ class SpinInspector extends MToonProperty:
 		emit_changed(get_edited_property(), x_input.value)
 		set_outline_prop(get_edited_property(), x_input.value)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var this_value: Variant = get_edited_object()[get_edited_property()]
 		if typeof(this_value) == TYPE_NIL:
 			const defaults = {
@@ -558,7 +557,7 @@ class ScaleOffsetInspector extends MToonProperty:
 		emit_changed(get_edited_property(), new_val)
 		set_outline_prop(get_edited_property(), new_val)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var st_value: Variant = get_edited_object()[get_edited_property()]
 		if typeof(st_value) == TYPE_NIL:
 			st_value = Plane(1,1,0,0)
@@ -582,8 +581,8 @@ class LinearColorInspector extends MToonProperty:
 		#picker_box.add_child(color_picker2, true)
 		#add_focusable(color_picker2)
 		color_picker.edit_alpha = allow_alpha
-		color_picker.rect_min_size = Vector2(40.0, 40.0)
-		#color_picker2.rect_min_size = Vector2(40.0, 40.0)
+		color_picker.custom_minimum_size = Vector2(40.0, 40.0)
+		#color_picker2.custom_minimum_size = Vector2(40.0, 40.0)
 		color_picker.color_changed.connect(self._color_changed)
 
 	func _color_changed(new_color: Color) -> void:
@@ -593,7 +592,7 @@ class LinearColorInspector extends MToonProperty:
 		emit_changed(get_edited_property(), new_val)
 		set_outline_prop(get_edited_property(), new_val)
 
-	func update_property() -> void:
+	func _update_property() -> void:
 		var linear_color: Variant = get_edited_object()[get_edited_property()]
 		if typeof(linear_color) == TYPE_NIL:
 			const defaults = {
