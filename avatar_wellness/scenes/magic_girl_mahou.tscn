@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx8itw8m6gh5o"]
+
+[ext_resource type="PackedScene" uid="uid://7lgx7rvuk6fi" path="res://avatar_wellness/art/characters/SK_fire_magical_girl/magic_girl_mahou.vrm" id="1_ipk70"]
+
+[node name="magic_girl_mahou" instance=ExtResource("1_ipk70")]

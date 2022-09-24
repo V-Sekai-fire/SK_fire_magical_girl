@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhdg3tan2crrt"]
+
+[ext_resource type="PackedScene" uid="uid://bwhu42ln5bp8p" path="res://avatar_wellness/art/characters/SK_fire_magical_girl/magic_girl_school.vrm" id="1_gd8e3"]
+
+[node name="magic_girl_school" instance=ExtResource("1_gd8e3")]
